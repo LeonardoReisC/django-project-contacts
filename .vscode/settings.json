@@ -1,0 +1,46 @@
+{
+	// Code Runner
+	"code-runner.executorMap": {
+		"python": "python -u $workspaceRoot\\manage.py runserver",
+	},
+	"code-runner.ignoreSelection": true,
+	"code-runner.runInTerminal": true,
+	
+	// python
+	"[python]": {
+  	  "editor.codeActionsOnSave": {
+  	    "source.fixAll": true,
+  	    "source.fixAll.unusedImports": true,
+  	    "source.organizeImports": true
+  	  },
+  	  "editor.defaultFormatter": "ms-python.python",
+	  "editor.rulers": [80],
+  	  "editor.insertSpaces": true,
+	  
+  	  "editor.tabSize": 4,
+  	},
+	"python.analysis.typeCheckingMode": "basic",
+	"python.analysis.diagnosticSeverityOverrides": {
+		"reportUnknownMemberType": "none",
+		"reportUnknownArgumentType": "none",
+		"reportUnknownVariableType": "none",
+		"reportUnknownLambdaType": "none",
+		"reportUnknownParameterType": "none"
+	  },
+	"python.defaultInterpreterPath": "python",
+	"python.formatting.autopep8Args": [
+		"--indent-size=4",
+		"--max-line-length=80",
+		"--ignore=W292,w293",
+	],
+	
+	"python.formatting.provider": "autopep8",
+  	"python.languageServer": "Pylance", 
+	"python.linting.flake8Enabled": true,
+	"python.linting.flake8Args": [
+		"--ignore=W292,w293",
+	],
+	"python.linting.mypyEnabled": true,
+	"python.testing.pytestEnabled": true,
+	"python.testing.unittestEnabled": false,
+}
