@@ -5,6 +5,20 @@
 	},
 	"code-runner.ignoreSelection": true,
 	"code-runner.runInTerminal": true,
+
+	//
+	"[django-html]": {
+  	  "editor.codeActionsOnSave": {
+  	    "source.fixAll": true,
+  	    "source.fixAll.unusedImports": true,
+  	    "source.organizeImports": true
+  	  },
+  	  "editor.defaultFormatter": "esbenp.prettier-vscode",
+	  "editor.rulers": [80],
+  	  "editor.insertSpaces": true,
+	  
+  	  "editor.tabSize": 2,
+  	},
 	
 	// python
 	"[python]": {

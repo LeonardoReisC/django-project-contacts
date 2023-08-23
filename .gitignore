@@ -12,6 +12,8 @@ Here's the ultimate Django gitignore#
 *.pyc
 __pycache__
 db.sqlite3
+db.sqlite3-shm
+db.sqlite3-wal
 media
 static/
 project/local_settings.py
