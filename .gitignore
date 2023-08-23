@@ -13,6 +13,7 @@ Here's the ultimate Django gitignore#
 __pycache__
 db.sqlite3
 media
+static/
 
 # Backup files # 
 *.bak 
