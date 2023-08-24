@@ -1,7 +1,7 @@
 {
 	// Code Runner
 	"code-runner.executorMap": {
-		"python": "python -u $workspaceRoot\\manage.py runserver",
+		"python": "python -u",
 	},
 	"code-runner.ignoreSelection": true,
 	"code-runner.runInTerminal": true,
