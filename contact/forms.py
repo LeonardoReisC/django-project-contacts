@@ -25,12 +25,32 @@ class ContactForm(forms.ModelForm):
         )
 
     def clean(self):
-        self.add_error(
-            None,
-            ValidationError(
-                'Error message',
-                code='invalid',
+        cleaned_data = self.cleaned_data
+
+        first_name = cleaned_data.get('first_name')
+        last_name = cleaned_data.get('last_name')
+
+        if first_name == last_name:
+            self.add_error(
+                'last_name',
+                ValidationError(
+                    'Must be different from First name.',
+                    code='invalid',
+                )
             )
-        )
 
         return super().clean()
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+
+        if first_name == 'ABC':
+            self.add_error(
+                'first_name',
+                ValidationError(
+                    'Don\'t type "ABC" on this field',
+                    code='invalid',
+                ),
+            )
+
+        return first_name
