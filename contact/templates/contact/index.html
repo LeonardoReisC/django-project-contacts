@@ -1,6 +1,6 @@
-{% extends 'global/base.html' %}
+{% extends 'global/base.html' %} 
 
-{% block content %}
+{% block content %} 
   {% if page_obj %}
     <div class="responsible-table">
       <table class="contacts-table">
@@ -15,45 +15,24 @@
         </thead>
         <tbody>
           {% for contact in page_obj %}
-            <tr class="table-row">
-              <td class="table-cel">
-                <a 
-                  href="{% url 'contact:contact' contact.id %}" 
-                  class="table-link"
-                >
-                  {{ contact.id }}
-                </a>
-              </td>
-              <td class="table-cel">
-                <a href="#" class="table-link">
-                  {{ contact.first_name }}
-                </a>
-              </td>
-              <td class="table-cel">
-                <a href="#" class="table-link">
-                  {{ contact.last_name }}
-                </a>
-              </td>
-              <td class="table-cel">
-                <a href="#" class="table-link">
-                  {{ contact.phone }}
-                </a>
-              </td>
-              <td class="table-cel">
-                <a href="#" class="table-link">
-                  {{ contact.email }}
-                </a>
-              </td>
-            </tr>
+          <tr class="table-row">
+            <td class="table-cel">
+              <a href="{% url 'contact:contact' contact.id %}" class="table-link">
+                {{ contact.id }}
+              </a>
+            </td>
+            <td class="table-cel">{{ contact.first_name }}</td>
+            <td class="table-cel">{{ contact.last_name }}</td>
+            <td class="table-cel">{{ contact.phone }}</td>
+            <td class="table-cel">{{ contact.email }}</td>
+          </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
-  {% else %}
+    {% else %}
     <div class="single-contact">
-      <h1 class="single-contact-name">
-        No contact found
-      </h1>
+      <h1 class="single-contact-name">No contact found</h1>
     </div>
-  {% endif %}
+  {% endif %} 
 {% endblock content %}
