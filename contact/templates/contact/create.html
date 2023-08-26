@@ -1,8 +1,8 @@
 {% extends 'global/base.html' %} {% block content %}
 <div class="form-wrapper">
-  <h2>Create contact</h2>
+  <h2>{{ title }}contact</h2>
   <form
-    action="{% url 'contact:create' %}"
+    action="{{ form_action }}"
     method="POST"
     enctype="multipart/form-data"
   >

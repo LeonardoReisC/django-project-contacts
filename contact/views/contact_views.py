@@ -16,6 +16,7 @@ def index(request):
 
     context = {
         'page_obj': page_obj,
+        'site_title': 'Home - ',
     }
 
     return render(
@@ -47,6 +48,7 @@ def search(request):
 
     context = {
         'page_obj': page_obj,
+        'site_title': 'Home - ',
     }
 
     return render(
