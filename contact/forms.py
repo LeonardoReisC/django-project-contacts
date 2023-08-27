@@ -5,15 +5,12 @@ from . import models
 
 
 class ContactForm(forms.ModelForm):
-    first_name = forms.CharField(
-        widget=forms.TextInput(
+    picture = forms.ImageField(
+        widget=forms.FileInput(
             attrs={
-                'class': '',
-                'placeholder': 'name',
+                'accept': 'image/*',
             }
-        ),
-        label='First name',
-        help_text='Must contain only characters'
+        )
     )
 
     class Meta:
@@ -21,6 +18,7 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 'phone',
             'email', 'description', 'category',
+            'picture'
         )
 
     def clean(self):
@@ -39,17 +37,3 @@ class ContactForm(forms.ModelForm):
             )
 
         return super().clean()
-
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-
-        if not first_name.isalpha():
-            self.add_error(
-                'first_name',
-                ValidationError(
-                    'Error: invalid name',
-                    code='invalid',
-                ),
-            )
-
-        return first_name
